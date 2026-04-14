@@ -7,21 +7,53 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "settings"
-    label: "Site Settings"
-    files:
-      - name: "general"
-        label: "General Settings"
-        file: "_data/settings.json"
-        fields:
-          - { label: "Site Name", name: "site_name", widget: "string", default: "By Chevelle" }
-          - { label: "Tagline", name: "tagline", widget: "string", default: "Brand Strategy & Web Design" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Instagram URL", name: "instagram", widget: "string" }
-          - { label: "Promo Bar Text", name: "promo_text", widget: "string" }
-          - { label: "Promo Active", name: "promo_active", widget: "boolean", default: true }
-
   - name: "hero"
     label: "Homepage Hero"
     files:
       - name: "hero"
+        label: "Hero Section"
+        file: "_data/hero.json"
+        fields:
+          - { label: "Hero Photo", name: "photo", widget: "image" }
+          - { label: "Headline Line 1", name: "headline1", widget: "string" }
+          - { label: "Headline Line 2 (italic)", name: "headline2", widget: "string" }
+          - { label: "Subheading", name: "sub", widget: "text" }
+          - { label: "Button 1 Text", name: "btn1_text", widget: "string" }
+          - { label: "Button 1 Link", name: "btn1_link", widget: "string" }
+          - { label: "Button 2 Text", name: "btn2_text", widget: "string" }
+          - { label: "Button 2 Link", name: "btn2_link", widget: "string" }
+
+  - name: "about"
+    label: "About Section"
+    files:
+      - name: "about"
+        label: "About"
+        file: "_data/about.json"
+        fields:
+          - { label: "About Photo", name: "photo", widget: "image" }
+          - { label: "Paragraph 1", name: "para1", widget: "text" }
+          - { label: "Paragraph 2", name: "para2", widget: "text" }
+
+  - name: "contact"
+    label: "Contact Info"
+    files:
+      - name: "contact"
+        label: "Contact Details"
+        file: "_data/contact.json"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
+          - { label: "PayPal Donation URL", name: "paypal", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+
+  - name: "portfolio"
+    label: "Portfolio Projects"
+    folder: "_data/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Project Name", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Live URL", name: "url", widget: "string", required: false }
+      - { label: "Coming Soon", name: "coming_soon", widget: "boolean", default: false }
