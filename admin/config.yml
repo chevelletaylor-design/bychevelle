@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: chevelletaylor-design/bychevelle
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "_data/settings.json"
+        fields:
+          - { label: "Site Name", name: "site_name", widget: "string", default: "By Chevelle" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Brand Strategy & Web Design" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
+          - { label: "Promo Bar Text", name: "promo_text", widget: "string" }
+          - { label: "Promo Active", name: "promo_active", widget: "boolean", default: true }
+
+  - name: "hero"
+    label: "Homepage Hero"
+    files:
+      - name: "hero"
