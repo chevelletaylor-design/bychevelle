@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: chevelletaylor-design/bychevelle
+  name: git-gateway
   branch: main
 
 media_folder: "images"
@@ -18,10 +17,6 @@ collections:
           - { label: "Headline Line 1", name: "headline1", widget: "string" }
           - { label: "Headline Line 2 (italic)", name: "headline2", widget: "string" }
           - { label: "Subheading", name: "sub", widget: "text" }
-          - { label: "Button 1 Text", name: "btn1_text", widget: "string" }
-          - { label: "Button 1 Link", name: "btn1_link", widget: "string" }
-          - { label: "Button 2 Text", name: "btn2_text", widget: "string" }
-          - { label: "Button 2 Link", name: "btn2_link", widget: "string" }
 
   - name: "about"
     label: "About Section"
@@ -43,17 +38,4 @@ collections:
         fields:
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Instagram URL", name: "instagram", widget: "string" }
-          - { label: "PayPal Donation URL", name: "paypal", widget: "string" }
-          - { label: "Location", name: "location", widget: "string" }
-
-  - name: "portfolio"
-    label: "Portfolio Projects"
-    folder: "_data/projects"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Project Name", name: "title", widget: "string" }
-      - { label: "Category", name: "category", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Live URL", name: "url", widget: "string", required: false }
-      - { label: "Coming Soon", name: "coming_soon", widget: "boolean", default: false }
+          - { label: "PayPal URL", name: "paypal", widget: "string" }
