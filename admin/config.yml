@@ -13,10 +13,26 @@ collections:
         label: "Hero Section"
         file: "_data/hero.json"
         fields:
-          - { label: "Hero Photo", name: "photo", widget: "image" }
-          - { label: "Headline Line 1", name: "headline1", widget: "string" }
-          - { label: "Headline Line 2 (italic)", name: "headline2", widget: "string" }
-          - { label: "Subheading", name: "sub", widget: "text" }
+          - { label: "Hero Photo", name: "photo", widget: "image", hint: "Save as images/chevelle-hero.jpg" }
+          - { label: "Eyebrow Text (small text above headline)", name: "eyebrow", widget: "string", default: "Brand Strategy & Web Design" }
+          - { label: "Headline Line 1", name: "headline1", widget: "string", default: "Your brand" }
+          - { label: "Headline Line 2 (shows in italic burgundy)", name: "headline2", widget: "string", default: "built" }
+          - { label: "Headline Line 3", name: "headline3", widget: "string", default: "the right way." }
+          - { label: "Subheading Text", name: "sub", widget: "text", default: "Custom websites for founders, professionals, and organizations who are ready to show up online — with intention, not just a template." }
+          - { label: "Button 1 Text", name: "btn1_text", widget: "string", default: "Start Your Project" }
+          - { label: "Button 2 Text", name: "btn2_text", widget: "string", default: "View Work" }
+
+  - name: "logo"
+    label: "Logo & Branding"
+    files:
+      - name: "logo"
+        label: "Logo"
+        file: "_data/logo.json"
+        fields:
+          - { label: "Logo Image (upload your logo file)", name: "logo_image", widget: "image", required: false, hint: "Upload a PNG with transparent background. Leave empty to use the 'by Chevelle' text logo." }
+          - { label: "Site Name (shown if no logo image)", name: "site_name", widget: "string", default: "by Chevelle" }
+          - { label: "Promo Bar Text", name: "promo_text", widget: "string", default: "LIMITED INTRO PRICING — $200 OFF ALL PACKAGES BOOKED BEFORE JUNE 1" }
+          - { label: "Show Promo Bar", name: "promo_active", widget: "boolean", default: true }
 
   - name: "about"
     label: "About Section"
@@ -25,17 +41,41 @@ collections:
         label: "About"
         file: "_data/about.json"
         fields:
-          - { label: "About Photo", name: "photo", widget: "image" }
+          - { label: "About Photo", name: "photo", widget: "image", hint: "Save as images/chevelle-about.jpg" }
+          - { label: "Heading Line 1", name: "heading1", widget: "string", default: "Strategy first." }
+          - { label: "Heading Line 2 (italic)", name: "heading2", widget: "string", default: "Then the site." }
           - { label: "Paragraph 1", name: "para1", widget: "text" }
           - { label: "Paragraph 2", name: "para2", widget: "text" }
+          - { label: "Button Text", name: "btn_text", widget: "string", default: "Work With Me" }
+
+  - name: "portfolio"
+    label: "Portfolio Projects"
+    files:
+      - name: "portfolio"
+        label: "All Portfolio Projects"
+        file: "_data/portfolio.json"
+        fields:
+          - label: "Projects"
+            name: "items"
+            widget: "list"
+            max: 4
+            fields:
+              - { label: "Project Name", name: "title", widget: "string" }
+              - { label: "Category (shown small above name)", name: "category", widget: "string", hint: "e.g. Nonprofit · 501(c)3" }
+              - { label: "Short Description", name: "description", widget: "string", hint: "e.g. 6-page site, gallery, admin panel" }
+              - { label: "Live Site URL", name: "url", widget: "string", required: false, hint: "Leave blank if coming soon" }
+              - { label: "Coming Soon", name: "coming_soon", widget: "boolean", default: false }
+              - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: false, hint: "Optional — shows behind the browser mockup" }
 
   - name: "contact"
-    label: "Contact Info"
+    label: "Contact & Footer Info"
     files:
       - name: "contact"
         label: "Contact Details"
         file: "_data/contact.json"
         fields:
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Instagram URL", name: "instagram", widget: "string" }
-          - { label: "PayPal URL", name: "paypal", widget: "string" }
+          - { label: "Email Address", name: "email", widget: "string", default: "info@decadedesignhouse.com" }
+          - { label: "Instagram URL", name: "instagram", widget: "string", default: "https://instagram.com/chevelle.jpg" }
+          - { label: "Location", name: "location", widget: "string", default: "New Jersey & Remote" }
+          - { label: "Footer Copyright Line", name: "copyright", widget: "string", default: "© 2025 By Chevelle — All rights reserved." }
+
